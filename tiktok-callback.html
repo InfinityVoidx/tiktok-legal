@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CreatorFlow TikTok Callback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>TikTok Authorization Complete</h1>
+  <p>This page is used as the TikTok authorization callback for CreatorFlow.</p>
+  <p>You can now return to the application.</p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const state = params.get("state");
+
+    if (code) {
+      document.body.innerHTML += `<p><strong>Authorization code received.</strong></p>`;
+    }
+  </script>
+</body>
+</html>
